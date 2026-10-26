@@ -131,6 +131,89 @@
   footer a{color:#c9d7e3;text-decoration:none}
   footer .fine{margin-top:22px;padding-top:16px;border-top:1px solid #ffffff14;font-size:12.5px;color:#7b8fa3}
 
+  /* ============ Telegram-кнопки ============ */
+  [hidden]{display:none!important}
+  .tg-top{display:inline-flex;align-items:center;gap:7px;color:#fff;opacity:.85;text-decoration:none;
+    font-size:14px;font-weight:600;flex:none}
+  .tg-top:hover{opacity:1}
+  .tg-top svg{flex:none}
+  @media(max-width:900px){
+    .tg-top span{display:none}
+    .tg-top{padding:8px;border:1px solid #ffffff26;border-radius:10px}
+  }
+  @media(max-width:360px){.tg-top{display:none}}
+
+  /* ============ чат-виджет ============ */
+  .chat-fab{position:fixed;right:22px;bottom:26px;z-index:54;display:inline-flex;align-items:center;gap:9px;
+    padding:14px 20px;border-radius:40px;background:var(--accent);color:#231603;border:none;cursor:pointer;
+    font:600 15px/1 "Segoe UI",Roboto,Arial,sans-serif;box-shadow:0 12px 30px rgba(240,166,60,.42)}
+  .chat-fab:hover{background:#f5b455}
+  .chat-fab svg{flex:none}
+  .chat{position:fixed;right:22px;bottom:26px;z-index:55;width:360px;max-width:calc(100vw - 24px);display:none}
+  .chat.open{display:block;animation:chatIn .16s ease-out}
+  @keyframes chatIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .chat-card{width:100%;height:520px;max-height:calc(100vh - 130px);background:#fff;border:1px solid var(--line);
+    border-radius:18px;box-shadow:0 30px 70px rgba(9,18,28,.35);display:flex;flex-direction:column;overflow:hidden}
+  .chat-head{display:flex;align-items:center;gap:10px;padding:11px 12px;flex:none;color:#fff;
+    background:linear-gradient(150deg,#10202e,#1b3448)}
+  .chat-ava{width:34px;height:34px;border-radius:50%;background:var(--accent);color:#231603;display:flex;
+    align-items:center;justify-content:center;font-weight:700;flex:none}
+  .chat-who{min-width:0}
+  .chat-title{font-weight:600;font-size:14.5px;line-height:1.25}
+  .chat-sub{font-size:11.5px;color:#a9bccd;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:180px}
+  .chat-head-actions{margin-left:auto;display:flex;gap:6px;align-items:center;flex:none}
+  .chat-close{width:34px;height:34px;border-radius:9px;border:none;background:#ffffff1f;color:#fff;font-size:19px;
+    line-height:1;cursor:pointer;font-family:inherit}
+  .chat-close:hover{background:#ffffff33}
+  .chat-tg{width:34px;height:34px;border-radius:9px;display:inline-flex;align-items:center;justify-content:center;
+    color:#fff;background:#ffffff1f;text-decoration:none}
+  .chat-tg:hover{background:#ffffff33}
+  .chat-log{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:14px;display:flex;
+    flex-direction:column;gap:8px;background:#fbfcfd}
+  .msg{max-width:86%;padding:9px 12px;border-radius:14px;font-size:14px;line-height:1.45;white-space:pre-wrap;
+    word-wrap:break-word;overflow-wrap:anywhere}
+  .msg.bot{background:#eef2f6;color:var(--ink);border-bottom-left-radius:4px;align-self:flex-start}
+  .msg.me{background:var(--ink);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+  .msg.typing{align-self:flex-start;display:flex;align-items:center;gap:3px;color:var(--muted);font-size:13px;
+    background:#eef2f6;padding:8px 12px}
+  .msg.typing span{margin-right:2px}
+  .msg.typing i{width:5px;height:5px;border-radius:50%;background:var(--muted);display:inline-block;animation:chatdot 1s infinite}
+  .msg.typing i:nth-of-type(2){animation-delay:.15s}
+  .msg.typing i:nth-of-type(3){animation-delay:.3s}
+  @keyframes chatdot{0%,60%,100%{opacity:.3;transform:translateY(0)}30%{opacity:1;transform:translateY(-2px)}}
+  .chat-quick{flex:none;display:flex;flex-wrap:wrap;gap:6px;padding:0 12px;background:#fbfcfd}
+  .chat-quick:not(:empty){padding-top:9px;padding-bottom:2px}
+  .chat-quick button{border:1px solid #cfe0ee;background:#fff;color:#28516f;border-radius:20px;padding:6px 11px;
+    font:500 12.5px/1.2 "Segoe UI",Roboto,Arial,sans-serif;cursor:pointer}
+  .chat-quick button:hover{background:#eef6fd;border-color:#a9c8e2}
+  .chat-lead{flex:none;border-top:1px solid var(--line);background:#f8fafc;padding:10px 12px;max-height:280px;overflow:auto}
+  .chat-lead-hint{font-size:12.5px;color:var(--muted);margin:0 0 8px}
+  .chat-lead label{display:block;font-size:11.5px;color:var(--muted);margin-bottom:3px}
+  .chat-lead input{width:100%;font:inherit;font-size:15px;padding:9px 11px;border:1px solid var(--line);
+    border-radius:9px;background:#fff;color:var(--ink);min-height:40px}
+  .chat-lead .cl-row2{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+  .chat-lead .cl-field{margin-bottom:7px}
+  .chat-lead-submit{width:100%;border:none;border-radius:10px;background:var(--accent);color:#231603;
+    font:600 14px/1 "Segoe UI",Roboto,Arial,sans-serif;min-height:42px;cursor:pointer;margin-top:2px}
+  .chat-lead-submit:hover{background:#f5b455}
+  .chat-lead-submit:disabled{opacity:.6;cursor:default}
+  .chat-lead-err{display:none;color:#8f2020;background:#fdeaea;border-radius:9px;padding:8px 10px;
+    font-size:12.5px;margin-bottom:7px}
+  .chat-lead-err.show{display:block}
+  .chat-input{flex:none;border-top:1px solid var(--line);padding:10px 12px;background:#fff}
+  .chat-row{display:flex;gap:7px;align-items:center}
+  .chat-row input{flex:1;min-width:0;min-height:42px;font:inherit;font-size:15px;padding:9px 12px;
+    border:1px solid var(--line);border-radius:11px;background:#fbfcfd;color:var(--ink)}
+  .chat-row input:focus{outline:2px solid #f0a63c66;outline-offset:1px;border-color:var(--accent)}
+  .chat-send{width:42px;height:42px;flex:none;border-radius:11px;border:none;background:var(--accent);color:#231603;
+    display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
+  .chat-send:hover{background:#f5b455}
+  .chat-send:disabled{opacity:.5;cursor:default}
+  .chat-foot{display:flex;align-items:center;gap:8px;padding-top:8px;font-size:12px;color:var(--muted)}
+  .chat-lead-btn{border:none;background:none;padding:0;color:#1f6feb;font:600 12.5px/1.2 "Segoe UI",Roboto,Arial,sans-serif;
+    cursor:pointer;text-decoration:underline}
+  .chat-tg-link{margin-left:auto;color:#1f6feb;font-weight:600;text-decoration:underline;font-size:12px}
+
   /* ============ мобильная оптимизация ============ */
   @media(max-width:760px){
     body{padding-bottom:calc(70px + env(safe-area-inset-bottom))}
@@ -175,6 +258,18 @@
     footer{padding:26px 0}
     footer .cols{gap:18px}
     .hidden-mobile{display:none!important}
+    /* чат-виджет: панель над нижней панелью, кнопка над ней */
+    .chat-fab{right:12px;bottom:calc(70px + env(safe-area-inset-bottom) + 10px);padding:12px 16px;font-size:14px;
+      box-shadow:0 10px 24px rgba(15,27,38,.28)}
+    .chat{left:0;right:0;bottom:calc(70px + env(safe-area-inset-bottom));width:auto;max-width:none}
+    .chat-card{height:min(68vh,520px);max-height:calc(100vh - 160px);border-radius:18px 18px 0 0;
+      border-left:none;border-right:none;border-bottom:none}
+    @supports (height:100dvh){
+      .chat-card{max-height:calc(100dvh - 160px)}
+    }
+    .chat-quick{padding-left:10px;padding-right:10px}
+    .chat-input{padding-left:10px;padding-right:10px}
+    .chat-row input,.chat-lead input{font-size:16px;min-height:44px}
   }
   @media(max-width:420px){
     .hero h1{font-size:26px}
@@ -201,7 +296,7 @@
   }
 
   /* кнопка «обратная связь» */
-  .fab{position:fixed;right:22px;bottom:26px;z-index:39;display:inline-flex;align-items:center;gap:9px;
+  .fab{position:fixed;right:22px;bottom:86px;z-index:39;display:inline-flex;align-items:center;gap:9px;
     padding:14px 20px;border-radius:40px;background:var(--ink);color:#fff;border:none;cursor:pointer;
     font:600 15px/1 "Segoe UI",Roboto,Arial,sans-serif;box-shadow:0 12px 30px rgba(15,27,38,.28)}
   .fab:hover{background:#22384a}
@@ -243,7 +338,10 @@
        Чтобы заменить файл — обновите содержимое этого файла на Диске
        (ссылка при этом не меняется) либо вставьте новый id в трёх местах:
        hero, блок «Материалы», нижняя панель на телефоне.
-    5) форма: подключите отправку (см. комментарий внизу скрипта)
+    5) отправка заявок, чат и Telegram-кнопки: заполните window.LANDING_CONFIG
+       в начале скрипта (endpoint, telegram, phone, email, company).
+       Пустые значения = демо-режим: формы работают через резервный сервис,
+       чат-виджет показывает заглушку, Telegram-кнопки скрыты.
 -->
 
 <header>
@@ -257,6 +355,10 @@
       <a href="#faq">Вопросы</a>
     </nav>
     <a class="phone" href="tel:+70000000000">[телефон]</a>
+    <a class="tg-top" data-tg hidden href="#" target="_blank" rel="noopener" aria-label="Написать в Telegram" title="Написать в Telegram">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.6 20c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1L18 6.4c.4-.4-.1-.6-.6-.2L6.8 13l-4.9-1.5c-1.1-.3-1.1-1.1.2-1.6L20.5 2.7c.9-.3 1.6.2 1.4 1.6z"/></svg>
+      <span>Telegram</span>
+    </a>
   </div>
 </header>
 
@@ -271,6 +373,10 @@
         Скачать прайс (CSV)
       </a>
       <a class="btn btn-ghost" href="#price">Запросить условия</a>
+      <a class="btn btn-ghost tg-btn" data-tg hidden href="#" target="_blank" rel="noopener">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.6 20c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1L18 6.4c.4-.4-.1-.6-.6-.2L6.8 13l-4.9-1.5c-1.1-.3-1.1-1.1.2-1.6L20.5 2.7c.9-.3 1.6.2 1.4 1.6z"/></svg>
+        Написать в Telegram
+      </a>
     </div>
     <div class="trust">
       <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f0a63c" stroke-width="2"><path d="M3 7h13l5 5v5H3z"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg><div><b>Со склада в СПб</b>отгружаем в день заказа</div></div>
@@ -413,7 +519,7 @@
   <div class="wrap">
     <div class="cols">
       <div><b>[Название компании]</b>Плитные материалы и кромка для мебельных производств<br>Санкт-Петербург</div>
-      <div><b>Контакты</b><a href="tel:+70000000000">[телефон]</a><br><a href="mailto:info@example.ru">[e-mail]</a><br>[адрес склада]</div>
+      <div><b>Контакты</b><a href="tel:+70000000000">[телефон]</a><br><a href="mailto:info@example.ru">[e-mail]</a><br><a data-tg hidden href="#" target="_blank" rel="noopener">Написать в Telegram</a><br><a href="#" data-fb>Задать вопрос</a><br>[адрес склада]</div>
       <div><b>Реквизиты</b>[ИНН/ОГРН]<br><a href="#">Политика обработки данных</a></div>
     </div>
     <div class="fine">© 2026 [Название компании]. Цены и наличие уточняйте у менеджера. Информация на сайте не является публичной офертой.</div>
@@ -455,143 +561,630 @@
     </form>
   </div>
 </div>
+<!-- ============ чат-виджет ============ -->
+<div class="chat" id="chat" role="dialog" aria-label="Онлайн-консультант" aria-hidden="true">
+  <div class="chat-card">
+    <div class="chat-head">
+      <span class="chat-ava" aria-hidden="true">П</span>
+      <div class="chat-who">
+        <div class="chat-title" id="chatTitle">Онлайн-консультант</div>
+        <div class="chat-sub">Плитные материалы · отвечаем в рабочее время</div>
+      </div>
+      <div class="chat-head-actions">
+        <a class="chat-tg" data-tg hidden href="#" target="_blank" rel="noopener" aria-label="Продолжить в Telegram" title="Продолжить в Telegram">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.6 20c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1L18 6.4c.4-.4-.1-.6-.6-.2L6.8 13l-4.9-1.5c-1.1-.3-1.1-1.1.2-1.6L20.5 2.7c.9-.3 1.6.2 1.4 1.6z"/></svg>
+        </a>
+        <button class="chat-close" id="chatClose" type="button" aria-label="Закрыть чат">×</button>
+      </div>
+    </div>
+    <div class="chat-log" id="chatLog" role="log" aria-live="polite" aria-relevant="additions"></div>
+    <div class="chat-quick" id="chatQuick"></div>
+    <form class="chat-lead" id="chatLeadForm" hidden novalidate>
+      <div class="chat-lead-hint" id="chatLeadHint">Оставьте контакты — перезвоним в рабочее время.</div>
+      <div class="chat-lead-err" id="chatLeadErr" role="alert"></div>
+      <div class="cl-row2">
+        <div class="cl-field">
+          <label for="chatLeadName">Имя</label>
+          <input id="chatLeadName" name="name" placeholder="Иван" autocomplete="name" required>
+        </div>
+        <div class="cl-field">
+          <label for="chatLeadPhone">Телефон</label>
+          <input id="chatLeadPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__" required>
+        </div>
+      </div>
+      <div class="cl-field">
+        <label for="chatLeadNeed">Что нужно</label>
+        <input id="chatLeadNeed" name="need" placeholder="ЛДСП 16 мм, 40 листов в месяц">
+      </div>
+      <button class="chat-lead-submit" type="submit">Отправить заявку</button>
+    </form>
+    <div class="chat-input" id="chatInputRow">
+      <div class="chat-row">
+        <input id="chatText" type="text" placeholder="Сообщение…" autocomplete="off" aria-label="Сообщение консультанту" enterkeyhint="send" maxlength="500">
+        <button class="chat-send" id="chatSend" type="button" aria-label="Отправить сообщение">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.6 20c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1L18 6.4c.4-.4-.1-.6-.6-.2L6.8 13l-4.9-1.5c-1.1-.3-1.1-1.1.2-1.6L20.5 2.7c.9-.3 1.6.2 1.4 1.6z"/></svg>
+        </button>
+      </div>
+      <div class="chat-foot">
+        <button class="chat-lead-btn" id="chatLeadBtn" type="button">Оставить заявку</button>
+        <a class="chat-tg-link" data-tg hidden href="#" target="_blank" rel="noopener">Продолжить в Telegram</a>
+      </div>
+    </div>
+  </div>
+</div>
+<button class="chat-fab" id="chatOpen" type="button" aria-label="Открыть чат с консультантом" aria-controls="chat" aria-expanded="false">
+  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.5 8.9 8.9 0 0 1-4-.9L3 21l1.9-5a8.6 8.6 0 0 1-.9-4 8.4 8.4 0 0 1 8.5-9 8.4 8.4 0 0 1 8.5 8.5z"/></svg>
+  <span>Спросить</span>
+</button>
 
 <script>
   /* ============================================================
-     ОТПРАВКА ЗАЯВОК
-     Пока ключ не указан, форма честно показывает телефон и почту —
-     но заявки НЕ уходят. Включить отправку можно за 2 минуты.
+     КОНФИГ ЛЕНДИНГА
+     Единственное место, где настраиваются заявки, чат и Telegram.
+     Пустые значения = демо-режим: формы отправляются резервным
+     сервисом, чат-виджет показывает заглушку, кнопки Telegram скрыты.
+
+       endpoint — URL веб-приложения Google Apps Script, заканчивается на /exec.
+                  В apps-script/Landing.html подставляется автоматически сборкой
+                  `node tools/build.mjs` (строки внутри маркеров не правьте руками).
+       telegram — ссылка на бота: https://t.me/имя_бота (можно и @имя_бота).
+                  Пусто → все кнопки «Написать в Telegram» скрыты.
+       phone, email, company — если заполнены, подставляются в тексты и ссылки
+                  вместо заглушек [телефон], [e-mail], [Название компании].
      ============================================================ */
-  var LEAD_CONFIG = {
-    provider: 'web3forms',   // 'web3forms' | 'formspree' | 'custom'
-    web3formsKey: '41803721-b48a-4de7-a603-c0bba6d3b695', // ключ Web3Forms
-    formspreeId: '',         // ← 2) или ID формы Formspree
-    customUrl: '',           // ← 3) или адрес своего вебхука (n8n / Make / Telegram-бот)
-    email: 'info@example.ru'
+  /* build:landing-config:start */
+  window.LANDING_CONFIG = {
+    endpoint: '',
+    telegram: 'https://t.me/Dspldsp_bot',
+    phone: '',
+    email: '',
+    company: ''
   };
+  /* build:landing-config:end */
 
-  function leadPayload(f) {
-    return {
-      name: f.get('name') || '',
-      company: f.get('company') || '',
-      phone: f.get('phone') || '',
-      what: f.get('what') || '',
-      msg: f.get('note') || f.get('msg') || '',
-      page: location.href,
-      when: new Date().toISOString()
-    };
-  }
+  (function () {
+    'use strict';
 
-  function sendLead(data) {
-    var p = LEAD_CONFIG.provider;
-    if (p === 'web3forms' && LEAD_CONFIG.web3formsKey) {
-      return fetch('https://api.web3forms.com/submit', {
+    var CFG = window.LANDING_CONFIG || {};
+
+    function cfg(key) {
+      var value = CFG[key];
+      return typeof value === 'string' ? value.replace(/^\s+|\s+$/g, '') : '';
+    }
+
+    var ENDPOINT = cfg('endpoint');
+    var TELEGRAM = cfg('telegram');
+
+    /* ---------- утилиты ---------- */
+    function digits(value) {
+      return String(value == null ? '' : value).replace(/\D/g, '');
+    }
+
+    function esc(value) {
+      return String(value == null ? '' : value).replace(/[&<>"']/g, function (ch) {
+        if (ch === '&') return '&amp;';
+        if (ch === '<') return '&lt;';
+        if (ch === '>') return '&gt;';
+        if (ch === '"') return '&quot;';
+        return '&#39;';
+      });
+    }
+
+    function phoneLabel() { return cfg('phone') || '[телефон]'; }
+    function emailLabel() { return cfg('email') || 'info@example.ru'; }
+
+    function telHref() {
+      var phone = cfg('phone');
+      return phone ? 'tel:' + phone.replace(/[^\d+]/g, '') : 'tel:+70000000000';
+    }
+
+    function contactsHtml() {
+      return 'Позвоните: <a href="' + esc(telHref()) + '">' + esc(phoneLabel()) + '</a>' +
+        ' или напишите на <a href="mailto:' + esc(emailLabel()) + '">' + esc(emailLabel()) + '</a>';
+    }
+
+    /* ---------- контакты и Telegram из конфига ---------- */
+    function applyConfigLinks() {
+      var phone = cfg('phone');
+      var email = cfg('email');
+      var company = cfg('company');
+
+      if (phone) {
+        Array.prototype.forEach.call(document.querySelectorAll('a[href^="tel:"]'), function (a) {
+          a.href = telHref();
+        });
+      }
+      if (email) {
+        Array.prototype.forEach.call(document.querySelectorAll('a[href^="mailto:"]'), function (a) {
+          a.href = 'mailto:' + email;
+        });
+      }
+      if (phone || email || company) {
+        var map = { '[телефон]': phone, '[e-mail]': email, '[Название компании]': company };
+        var elements = document.querySelectorAll('body *:not(script):not(style)');
+        Array.prototype.forEach.call(elements, function (el) {
+          Array.prototype.forEach.call(el.childNodes, function (node) {
+            if (node.nodeType !== 3 || !node.nodeValue || node.nodeValue.indexOf('[') === -1) return;
+            var text = node.nodeValue;
+            Object.keys(map).forEach(function (token) {
+              if (map[token]) text = text.split(token).join(map[token]);
+            });
+            if (text !== node.nodeValue) node.nodeValue = text;
+          });
+        });
+      }
+
+      var tg = TELEGRAM;
+      if (tg && !/^https?:\/\//i.test(tg)) tg = 'https://t.me/' + tg.replace(/^@/, '');
+      Array.prototype.forEach.call(document.querySelectorAll('[data-tg]'), function (a) {
+        if (tg) {
+          a.href = tg;
+          a.hidden = false;
+        } else {
+          a.hidden = true;
+        }
+      });
+    }
+    applyConfigLinks();
+
+    /* ---------- HTTP к Apps Script ---------- */
+    /*
+      Content-Type: text/plain — обязательное условие контракта: с ним браузер
+      не делает CORS-preflight, а Apps Script не умеет отвечать на OPTIONS.
+      Тело запроса — JSON-строка, ответ разбираем как JSON.
+    */
+    function postJson(payload) {
+      if (!ENDPOINT) return Promise.reject(new Error('not-configured'));
+      return fetch(ENDPOINT, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({
-          access_key: LEAD_CONFIG.web3formsKey,
-          subject: 'Заявка с сайта — ' + (data.company || data.name || 'без имени'),
-          from_name: 'Сайт плитных материалов',
-          name: data.name, company: data.company, phone: data.phone,
-          interest: data.what, message: data.msg, page: data.page
-        })
-      }).then(function (r) {
-        return r.json().then(function (j) {
-          if (!r.ok || j.success === false) throw new Error(j.message || 'ошибка сервиса');
-          return j;
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload)
+      }).then(function (response) {
+        return response.text().then(function (body) {
+          var json = null;
+          try { json = JSON.parse(body); } catch (err) { json = null; }
+          if (!response.ok) {
+            throw new Error(json && json.error ? json.error : 'Сервис ответил ошибкой (' + response.status + ').');
+          }
+          if (!json) throw new Error('Сервис вернул неожиданный ответ.');
+          return json;
         });
       });
     }
-    if (p === 'formspree' && LEAD_CONFIG.formspreeId) {
-      return fetch('https://formspree.io/f/' + LEAD_CONFIG.formspreeId, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(data)
-      }).then(function (r) {
-        if (!r.ok) throw new Error('ошибка сервиса ' + r.status);
-        return r.json().catch(function () { return {}; });
-      });
-    }
-    if (p === 'custom' && LEAD_CONFIG.customUrl) {
-      return fetch(LEAD_CONFIG.customUrl, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      }).then(function (r) { if (!r.ok) throw new Error('ошибка вебхука'); return {}; });
-    }
-    return Promise.reject(new Error('not-configured'));
-  }
 
-  function showResult(el, ok, text) {
-    el.innerHTML = text;
-    el.className = el.className.replace(/\s*error/, '') + (ok ? '' : ' error');
-    el.style.display = 'block';
-  }
+    /* ---------- заявки ---------- */
+    /* Резервный способ отправки для демо-режима (endpoint не задан). */
+    var LEAD_CONFIG = {
+      provider: 'web3forms',   // 'web3forms' | 'formspree' | 'custom'
+      web3formsKey: '41803721-b48a-4de7-a603-c0bba6d3b695',
+      formspreeId: '',
+      customUrl: '',
+      email: 'info@example.ru'
+    };
 
-  function handleLead(form, okEl, btn) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var data = leadPayload(new FormData(form));
-      var digits = (data.phone || '').replace(/\D/g, '');
-      if (digits.length < 10) {
-        showResult(okEl, false, 'Проверьте номер телефона — нужно 10–11 цифр.');
-        return;
+    function leadData(formData, channel) {
+      function field(name) {
+        return String(formData.get(name) || '').replace(/^\s+|\s+$/g, '');
       }
+      return {
+        action: 'lead',
+        channel: channel || 'site',
+        name: field('name'),
+        company: field('company'),
+        phone: field('phone'),
+        what: field('what'),
+        msg: field('note') || field('msg'),
+        page: location.href,
+        when: new Date().toISOString()
+      };
+    }
+
+    function rememberLead(data) {
       try {
-        var list = JSON.parse(localStorage.getItem('landing_leads') || '[]');
-        list.push(data); localStorage.setItem('landing_leads', JSON.stringify(list));
+        var key = 'landing_leads';
+        var list = JSON.parse(localStorage.getItem(key) || '[]');
+        if (!Array.isArray(list)) list = [];
+        list.push(data);
+        if (list.length > 20) list = list.slice(list.length - 20);
+        localStorage.setItem(key, JSON.stringify(list));
       } catch (err) {}
+    }
 
-      var label = btn ? btn.textContent : '';
-      if (btn) { btn.disabled = true; btn.textContent = 'Отправляем…'; }
+    function sendLeadDemo(data) {
+      var provider = LEAD_CONFIG.provider;
+      if (provider === 'web3forms' && LEAD_CONFIG.web3formsKey) {
+        return fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            access_key: LEAD_CONFIG.web3formsKey,
+            subject: 'Заявка с сайта — ' + (data.company || data.name || 'без имени'),
+            from_name: 'Сайт плитных материалов',
+            name: data.name, company: data.company, phone: data.phone,
+            interest: data.what, message: data.msg, page: data.page
+          })
+        }).then(function (response) {
+          return response.json().then(function (json) {
+            if (!response.ok || json.success === false) throw new Error(json.message || 'ошибка сервиса');
+            return json;
+          });
+        });
+      }
+      if (provider === 'formspree' && LEAD_CONFIG.formspreeId) {
+        return fetch('https://formspree.io/f/' + LEAD_CONFIG.formspreeId, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(data)
+        }).then(function (response) {
+          if (!response.ok) throw new Error('ошибка сервиса ' + response.status);
+          return response.json().catch(function () { return {}; });
+        });
+      }
+      if (provider === 'custom' && LEAD_CONFIG.customUrl) {
+        return fetch(LEAD_CONFIG.customUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        }).then(function (response) {
+          if (!response.ok) throw new Error('ошибка сервиса');
+          return {};
+        });
+      }
+      return Promise.reject(new Error('not-configured'));
+    }
 
-      sendLead(data).then(function () {
-        showResult(okEl, true, 'Заявка отправлена. Свяжемся в рабочее время в течение часа. Срочно — звоните: <a href="tel:+70000000000">[телефон]</a>');
-        form.reset();
-      }).catch(function (err) {
-        var text = err.message === 'not-configured'
-          ? 'Форма пока не подключена к отправке. Напишите на <a href="mailto:' + LEAD_CONFIG.email + '">' + LEAD_CONFIG.email + '</a> или позвоните: <a href="tel:+70000000000">[телефон]</a>.'
-          : 'Не удалось отправить (' + err.message + '). Позвоните: <a href="tel:+70000000000">[телефон]</a> или напишите на <a href="mailto:' + LEAD_CONFIG.email + '">' + LEAD_CONFIG.email + '</a>.';
-        showResult(okEl, false, text);
-      }).then(function () {
-        if (btn) { btn.disabled = false; btn.textContent = label; }
+    function sendLead(data) {
+      if (!ENDPOINT) return sendLeadDemo(data);
+      return postJson(data).then(function (json) {
+        if (json && json.ok === true) return json;
+        var error = new Error(json && json.error ? json.error : 'Сервер не принял заявку.');
+        error.validation = true;
+        throw error;
       });
-    });
-  }
-
-  handleLead(
-    document.getElementById('lead'),
-    document.getElementById('ok'),
-    document.querySelector('#lead button[type=submit]')
-  );
-
-  /* ---- обратная связь: кнопка + модальное окно ---- */
-  (function(){
-    var fb = document.getElementById('fb');
-    var card = fb.querySelector('.fb-card');
-    var form = document.getElementById('fbForm');
-    var ok = document.getElementById('fbOk');
-    var lastFocus = null;
-
-    function open(){
-      lastFocus = document.activeElement;
-      fb.classList.add('show');
-      document.body.style.overflow = 'hidden';
-      ok.style.display = 'none';
-      setTimeout(function(){ var n = document.getElementById('fbName'); if (n) n.focus(); }, 60);
-    }
-    function close(){
-      fb.classList.remove('show');
-      document.body.style.overflow = '';
-      if (lastFocus && lastFocus.focus) lastFocus.focus();
     }
 
-    document.querySelectorAll('[data-fb]').forEach(function(b){ b.addEventListener('click', open); });
-    document.getElementById('fbClose').addEventListener('click', close);
-    fb.addEventListener('click', function(e){ if (!card.contains(e.target)) close(); });
-    document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && fb.classList.contains('show')) close(); });
+    function showResult(el, ok, html) {
+      if (!el) return;
+      el.innerHTML = html;
+      el.classList.remove('error');
+      if (!ok) el.classList.add('error');
+      el.style.display = 'block';
+    }
 
-    handleLead(form, ok, form.querySelector('button[type=submit]'));
+    function handleLead(form, okEl, button, channel) {
+      if (!form) return;
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        var data = leadData(new FormData(form), channel);
+        if (digits(data.phone).length < 10) {
+          showResult(okEl, false, 'Проверьте номер телефона — нужно 10–11 цифр.');
+          return;
+        }
+        rememberLead(data);
+
+        var label = button ? button.textContent : '';
+        if (button) { button.disabled = true; button.textContent = 'Отправляем…'; }
+
+        var request;
+        try { request = sendLead(data); } catch (err) { request = Promise.reject(err); }
+
+        request.then(function (json) {
+          var message = json && json.message ? String(json.message) : 'Заявка принята. Менеджер свяжется в рабочее время.';
+          showResult(okEl, true, esc(message) + ' Срочно — ' + contactsHtml() + '.');
+          form.reset();
+        }).catch(function (err) {
+          var text;
+          if (err && err.validation) {
+            text = esc(err.message);
+          } else if (err && err.message === 'not-configured') {
+            text = 'Форма пока не подключена к отправке. ' + contactsHtml() + '.';
+          } else {
+            text = 'Не удалось отправить заявку. ' + contactsHtml() + '. Данные заявки сохранились в этом браузере.';
+          }
+          showResult(okEl, false, text);
+        }).then(function () {
+          if (button) { button.disabled = false; button.textContent = label; }
+        });
+      });
+    }
+
+    /* ================== формы заявки ================== */
+    handleLead(
+      document.getElementById('lead'),
+      document.getElementById('ok'),
+      document.querySelector('#lead button[type="submit"]'),
+      'site'
+    );
+
+    /* ================== модальное окно «обратная связь» ================== */
+    (function initFeedback() {
+      var fb = document.getElementById('fb');
+      if (!fb) return;
+      var card = fb.querySelector('.fb-card');
+      var form = document.getElementById('fbForm');
+      var ok = document.getElementById('fbOk');
+      var closeButton = document.getElementById('fbClose');
+      var lastFocus = null;
+
+      function open() {
+        lastFocus = document.activeElement;
+        fb.classList.add('show');
+        document.body.style.overflow = 'hidden';
+        if (ok) ok.style.display = 'none';
+        setTimeout(function () {
+          var name = document.getElementById('fbName');
+          if (name && name.focus) name.focus();
+        }, 60);
+      }
+      function close() {
+        fb.classList.remove('show');
+        document.body.style.overflow = '';
+        if (lastFocus && lastFocus.focus) lastFocus.focus();
+      }
+
+      Array.prototype.forEach.call(document.querySelectorAll('[data-fb]'), function (btn) {
+        btn.addEventListener('click', function (event) { event.preventDefault(); open(); });
+      });
+      if (closeButton) closeButton.addEventListener('click', close);
+      fb.addEventListener('click', function (event) { if (card && !card.contains(event.target)) close(); });
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && fb.classList.contains('show')) close();
+      });
+      if (form) handleLead(form, ok, form.querySelector('button[type="submit"]'), 'site');
+    })();
+
+    /* ================== чат-виджет ================== */
+    (function initChat() {
+      var panel = document.getElementById('chat');
+      var launcher = document.getElementById('chatOpen');
+      if (!panel || !launcher) return;
+
+      var closeButton = document.getElementById('chatClose');
+      var logEl = document.getElementById('chatLog');
+      var quickEl = document.getElementById('chatQuick');
+      var inputRow = document.getElementById('chatInputRow');
+      var inputEl = document.getElementById('chatText');
+      var sendButton = document.getElementById('chatSend');
+      var leadForm = document.getElementById('chatLeadForm');
+      var leadHint = document.getElementById('chatLeadHint');
+      var leadErr = document.getElementById('chatLeadErr');
+      var leadButton = document.getElementById('chatLeadBtn');
+
+      var GREETING = 'Здравствуйте! Подскажу по плитным материалам и кромке: ЛДСП, МДФ, ХДФ, ОСБ, толщины и декоры, раскрой и кромление, доставка, документы. Что вас интересует?';
+      var STARTER_QUICK = ['Цены и наличие', 'Раскрой и кромление', 'Доставка'];
+
+      var launched = false;
+      var busy = false;
+      var replies = 0;
+      var leadSent = false;
+      var lastFocus = null;
+      var typingEl = null;
+
+      function newId() {
+        try {
+          if (window.crypto && typeof window.crypto.randomUUID === 'function') return window.crypto.randomUUID();
+        } catch (err) {}
+        return 's-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 10);
+      }
+      function sessionId() {
+        var key = 'plitbot_chat_session';
+        try {
+          var saved = window.localStorage.getItem(key);
+          if (saved) return saved;
+        } catch (err) {}
+        var id = newId();
+        try { window.localStorage.setItem(key, id); } catch (err) {}
+        return id;
+      }
+      var SESSION = sessionId();
+
+      function scrollDown() {
+        if (logEl) logEl.scrollTop = logEl.scrollHeight;
+      }
+
+      function addMsg(kind, text) {
+        var bubble = document.createElement('div');
+        bubble.className = 'msg ' + kind;
+        bubble.textContent = text;
+        logEl.appendChild(bubble);
+        scrollDown();
+        return bubble;
+      }
+
+      function showTyping() {
+        if (typingEl) return;
+        typingEl = document.createElement('div');
+        typingEl.className = 'msg typing';
+        typingEl.setAttribute('aria-label', 'Консультант печатает');
+        var label = document.createElement('span');
+        label.textContent = 'печатает';
+        typingEl.appendChild(label);
+        for (var i = 0; i < 3; i++) typingEl.appendChild(document.createElement('i'));
+        logEl.appendChild(typingEl);
+        scrollDown();
+      }
+      function hideTyping() {
+        if (typingEl && typingEl.parentNode) typingEl.parentNode.removeChild(typingEl);
+        typingEl = null;
+      }
+
+      function setQuick(list) {
+        if (!quickEl) return;
+        quickEl.innerHTML = '';
+        var items = Array.isArray(list) ? list.slice(0, 3) : [];
+        items.forEach(function (item) {
+          var text = String(item == null ? '' : item).replace(/^\s+|\s+$/g, '');
+          if (!text) return;
+          var chip = document.createElement('button');
+          chip.type = 'button';
+          chip.textContent = text.slice(0, 80);
+          chip.addEventListener('click', function () {
+            if (/заявк|менеджер|перезвон|связаться/i.test(chip.textContent)) showLeadForm();
+            else sendChat(chip.textContent);
+          });
+          quickEl.appendChild(chip);
+        });
+      }
+
+      function setBusy(state) {
+        busy = state;
+        if (inputEl) inputEl.disabled = state;
+        if (sendButton) sendButton.disabled = state;
+      }
+
+      function showLeadError(text) {
+        if (!leadErr) return;
+        leadErr.textContent = text || '';
+        if (text) leadErr.classList.add('show');
+        else leadErr.classList.remove('show');
+      }
+
+      function showLeadForm(hint) {
+        if (!leadForm || leadSent) return;
+        if (hint && leadHint) leadHint.textContent = hint;
+        leadForm.hidden = false;
+        scrollDown();
+      }
+      function hideLeadForm() {
+        if (leadForm) leadForm.hidden = true;
+      }
+
+      function openChat() {
+        if (panel.classList.contains('open')) return;
+        lastFocus = document.activeElement;
+        panel.classList.add('open');
+        panel.setAttribute('aria-hidden', 'false');
+        launcher.setAttribute('aria-expanded', 'true');
+        launcher.hidden = true;
+        if (!launched) {
+          launched = true;
+          addMsg('bot', GREETING);
+          if (!ENDPOINT) {
+            if (inputRow) inputRow.hidden = true;
+            addMsg('bot', 'Чат временно недоступен. ' + (cfg('phone')
+              ? 'Позвоните: ' + cfg('phone') + ' или оставьте заявку — перезвоним.'
+              : 'Оставьте заявку — менеджер свяжется в рабочее время.'));
+            showLeadForm();
+            if (closeButton && closeButton.focus) closeButton.focus();
+          } else {
+            setQuick(STARTER_QUICK);
+            if (inputEl) setTimeout(function () { if (inputEl.focus) inputEl.focus(); }, 80);
+          }
+        }
+        scrollDown();
+      }
+
+      function closeChat() {
+        if (!panel.classList.contains('open')) return;
+        panel.classList.remove('open');
+        panel.setAttribute('aria-hidden', 'true');
+        launcher.hidden = false;
+        launcher.setAttribute('aria-expanded', 'false');
+        if (lastFocus && lastFocus.focus) lastFocus.focus();
+      }
+
+      function sendChat(raw) {
+        var text = String(raw == null ? '' : raw).replace(/^\s+|\s+$/g, '');
+        if (!text || busy || !ENDPOINT) return;
+        addMsg('me', text);
+        if (inputEl) inputEl.value = '';
+        setQuick([]);
+        setBusy(true);
+        showTyping();
+
+        postJson({ action: 'chat', session: SESSION, text: text }).then(function (json) {
+          hideTyping();
+          if (!json || json.ok !== true) {
+            addMsg('bot', json && json.error ? String(json.error) : 'Не получилось ответить. Попробуйте ещё раз или оставьте заявку.');
+            showLeadForm();
+            return;
+          }
+          var reply = String(json.reply == null ? '' : json.reply).replace(/^\s+|\s+$/g, '');
+          addMsg('bot', reply || 'Уточню у менеджера и вернусь с ответом. Оставьте телефон — перезвоним.');
+          replies += 1;
+          setQuick(json.quick);
+          if (json.askPhone) showLeadForm('Оставьте телефон — менеджер перезвонит и уточнит детали.');
+          else if (replies >= 2) showLeadForm();
+        }).catch(function () {
+          hideTyping();
+          addMsg('bot', 'Не удалось связаться с консультантом. ' + (cfg('phone')
+            ? 'Позвоните: ' + cfg('phone') + ' или оставьте заявку.'
+            : 'Оставьте заявку — перезвоним в рабочее время.'));
+          showLeadForm();
+        }).then(function () {
+          setBusy(false);
+          if (ENDPOINT && inputEl && inputEl.focus) {
+            try { inputEl.focus(); } catch (err) {}
+          }
+        });
+      }
+
+      if (sendButton) sendButton.addEventListener('click', function () {
+        sendChat(inputEl ? inputEl.value : '');
+      });
+      if (inputEl) inputEl.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter' && !event.shiftKey) {
+          event.preventDefault();
+          sendChat(inputEl.value);
+        }
+      });
+      launcher.addEventListener('click', openChat);
+      if (closeButton) closeButton.addEventListener('click', closeChat);
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && panel.classList.contains('open')) closeChat();
+      });
+      if (leadButton) leadButton.addEventListener('click', function () {
+        showLeadForm();
+        if (leadForm && !leadForm.hidden) {
+          var name = document.getElementById('chatLeadName');
+          if (name && name.focus) name.focus();
+        }
+      });
+
+      if (leadForm) leadForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        if (leadSent) return;
+        var formData = new FormData(leadForm);
+        var data = {
+          action: 'lead',
+          channel: 'widget',
+          name: String(formData.get('name') || '').replace(/^\s+|\s+$/g, ''),
+          company: '',
+          phone: String(formData.get('phone') || '').replace(/^\s+|\s+$/g, ''),
+          what: String(formData.get('need') || '').replace(/^\s+|\s+$/g, ''),
+          msg: 'Заявка из чата на сайте',
+          page: location.href,
+          when: new Date().toISOString()
+        };
+        if (!data.name) { showLeadError('Напишите, как к вам обращаться.'); return; }
+        if (digits(data.phone).length < 10) { showLeadError('Укажите телефон — нужно 10–11 цифр.'); return; }
+        showLeadError('');
+        rememberLead(data);
+
+        var button = leadForm.querySelector('button[type="submit"]');
+        var label = button ? button.textContent : '';
+        if (button) { button.disabled = true; button.textContent = 'Отправляем…'; }
+
+        sendLead(data).then(function (json) {
+          leadSent = true;
+          hideLeadForm();
+          if (leadButton) leadButton.hidden = true;
+          var message = json && json.message ? String(json.message) : 'Заявка принята. Менеджер свяжется в рабочее время.';
+          addMsg('bot', message);
+        }).catch(function (err) {
+          var text = 'Не удалось отправить заявку. ' + (cfg('phone')
+            ? 'Позвоните: ' + cfg('phone') + '.'
+            : 'Попробуйте позже или напишите на ' + emailLabel() + '.');
+          if (err && err.validation) text = String(err.message);
+          showLeadError(text);
+        }).then(function () {
+          if (button) { button.disabled = false; button.textContent = label; }
+        });
+      });
+
+      /* быстрый переход: index.html#chat сразу открывает виджет */
+      if (location.hash === '#chat') setTimeout(openChat, 80);
+    })();
   })();
 </script>
 </body>
